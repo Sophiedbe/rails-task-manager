@@ -1,0 +1,27 @@
+<!-- app/views/tasks/_form.html.erb -->
+<!-- app/views/tasks/_form.html.erb -->
+<%= form_with(model: @task, local: true, html: { class: 'needs-validation', novalidate: true }) do |form| %>
+
+  <div class="mb-3">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :details, class: 'form-label' %>
+    <%= form.text_area :details, class: 'form-control' %>
+  </div>
+
+  <% if action_name == 'edit' %>
+    <div class="mb-3">
+      <%= form.label :completed, class: 'form-label' %>
+      <%= form.check_box :completed, class: 'form-check-input' %>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.submit action_name == 'edit' ? 'Update Task' : 'Create Task', class: 'btn btn-primary' %>
+  </div>
+
+<% end %>
+

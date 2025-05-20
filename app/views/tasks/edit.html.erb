@@ -1,0 +1,21 @@
+<!-- app/views/tasks/new.html.erb (ou edit.html.erb) -->
+
+<div class="container mt-5">
+  <h1 class="mb-4">
+    <%= action_name == "edit" ? "Edit task" : "New task" %>
+    <% if @task.title.present? %>
+      <small class="text-muted">— <%= @task.title %></small>
+    <% end %>
+  </h1>
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <%= render 'form' %>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <%= link_to "← Back to list", tasks_path, class: "btn btn-secondary" %>
+  </div>
+</div>
+

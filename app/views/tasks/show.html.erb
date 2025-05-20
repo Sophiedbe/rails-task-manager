@@ -1,0 +1,25 @@
+<div class="container mt-5">
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h1 class="card-title">
+        <%= @task.title %>
+        <% if @task.completed %>
+          <span class="badge bg-success">Completed</span>
+        <% else %>
+          <span class="badge bg-warning text-dark">Pending</span>
+        <% end %>
+      </h1>
+
+      <p class="card-text mt-3"><%= @task.details %></p>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <%= link_to "← Back to list", tasks_path, class: "btn btn-secondary" %>
+    <%= link_to "Edit", edit_task_path(@task), class: "btn btn-primary ms-2" %>
+  </div>
+
+</div>
+
+
